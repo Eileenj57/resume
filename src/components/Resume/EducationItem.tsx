@@ -1,3 +1,5 @@
+import { assetUrl } from '@/lib/utils'
+
 interface EducationItemProps {
   school: string
   degree: string
@@ -11,7 +13,7 @@ export function EducationItem({ school, degree, specialty, period, logo }: Educa
     <div className="flex items-start gap-4">
       {logo && (
         <div className="w-14 h-14 rounded-lg overflow-hidden flex-shrink-0">
-          <img src={logo} alt={`${school} logo`} className="object-contain w-full h-full" />
+          <img src={assetUrl(logo)} alt={`${school} logo`} className="object-contain w-full h-full" />
         </div>
       )}
       <div>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
+import { assetUrl } from '@/lib/utils'
 import { SidebarSection } from './SidebarSection'
 import { ContactItem } from './ContactItem'
 import { SkillCategory } from './SkillCategory'
@@ -80,7 +81,7 @@ export function Sidebar() {
       {/* Photo */}
       {personal.photo && (
         <SidebarPhoto
-          photo={personal.photo}
+          photo={assetUrl(personal.photo)}
           name={personal.name}
           emoji={personal.photoBackEmoji}
         />
