@@ -37,6 +37,7 @@ const TECH_REGISTRY = {
   'PHP': { color: '#777BB4' },
   'C': { color: '#A8B9CC' },
   'C++': { color: '#00599C' },
+  'C/C++': { color: '#00599C' },
   'C#': { color: '#512BD4' },
   'Swift': { color: '#F05138' },
   'Kotlin': { color: '#7F52FF' },
@@ -85,6 +86,7 @@ const TECH_REGISTRY = {
   'MySQL': { color: '#4479A1' },
   'Redis': { color: '#DC382D' },
   'SQLite': { color: '#003B57' },
+  'SQL': { color: '#4479A1' },
   'Elasticsearch': { color: '#005571' },
   'Firebase': { color: '#FFCA28' },
   'Supabase': { color: '#3FCF8E' },
@@ -122,6 +124,7 @@ const TECH_REGISTRY = {
   'SCSS': { color: '#CC6699' },
   'CSS': { color: '#1572B6' },
   'HTML': { color: '#E34F26' },
+  'HTML/CSS': { color: '#E34F26' },
   'Styled Components': { color: '#DB7093' },
   'Material UI': { color: '#007FFF' },
   'MUI': { color: '#007FFF' },
@@ -148,6 +151,11 @@ const TECH_REGISTRY = {
   'Storybook': { color: '#FF4785' },
   'Figma': { color: '#F24E1E' },
   'Stripe': { color: '#635BFF' },
+  'Jupyter': { color: '#F37626' },
+  'Visual Studio': { color: '#5C2D91' },
+  'IntelliJ': { color: '#000000' },
+  'Unity': { color: '#000000' },
+  'Blender': { color: '#F5792A' },
 
   // ===== Testing =====
   'Jest': { color: '#C21325' },
@@ -159,18 +167,38 @@ const TECH_REGISTRY = {
   'Selenium': { color: '#43B02A' },
 
   // ===== AI & Data =====
+  // Frameworks (keeping official brand colors)
   'TensorFlow': { color: '#FF6F00' },
   'PyTorch': { color: '#EE4C2C' },
   'OpenAI': { color: '#412991' },
   'LangChain': { color: '#1C3C3C' },
+  'Scikit-learn': { color: '#F7931E' },
+  
+  // Data Processing (blue spectrum - analytical/data theme)
   'Pandas': { color: '#150458' },
   'NumPy': { color: '#013243' },
+  'Data Analysis': { color: '#1976D2' },
+  
+  // Visualization (blue-cyan spectrum - visual representation)
+  'Matplotlib': { color: '#11557C' },
+  'Seaborn': { color: '#4E9BCD' },
+  
+  // ML Domains (warm spectrum - orange to purple for AI intelligence)
+  'Machine Learning': { color: '#FF6F00' },      // Orange - general ML
+  'Deep Learning': { color: '#EE4C2C' },         // Red-orange - neural networks
+  'Reinforcement Learning': { color: '#9C27B0' }, // Purple - advanced AI
+  'Computer Vision': { color: '#00BCD4' },        // Cyan - visual/camera theme
+  
+  // High-Performance Computing (green spectrum - NVIDIA brand)
+  'GPU Computing': { color: '#76B900' },
+  'CUDA': { color: '#76B900' },
 
   // ===== CMS & Others =====
   'WordPress': { color: '#21759B' },
   'Strapi': { color: '#4945FF' },
   'Sanity': { color: '#F03E2F' },
   'Contentful': { color: '#2478CC' },
+  'CSHTML': { color: '#512BD4' },
 
   // ===== Messaging & Realtime =====
   'RabbitMQ': { color: '#FF6600' },

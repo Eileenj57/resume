@@ -19,7 +19,7 @@ export const resumeConfig: ResumeConfig = {
 
   // ===== SEO =====
   seo: {
-    title: 'Eileen Jovenin — Computer Science Engineer | AI & Data',
+    title: 'Eileen Jovenin — CV',
     description: 'Interactive resume of Eileen Jovenin, Computer Science Engineer specializing in AI, Machine Learning, and Software Development.',
   },
 
@@ -72,6 +72,7 @@ export const resumeConfig: ResumeConfig = {
       type: 'badges',
       items: [
         { name: 'Machine Learning' },
+        { name: 'Reinforcement Learning' },
         { name: 'Deep Learning' },
         { name: 'PyTorch' },
         { name: 'Scikit-learn' },
@@ -179,7 +180,6 @@ export const resumeConfig: ResumeConfig = {
             'Set up functional tests and validated scenarios',
             'Participated in production deployment process',
             'Optimized testing processes, reducing manual validation time by 45%',
-            'Collaborated with stakeholders to refine requirements',
           ],
           fr: [
             'Analyse des besoins fonctionnels et conception des fonctionnalités de l\'application',
@@ -188,7 +188,6 @@ export const resumeConfig: ResumeConfig = {
             'Mise en place de tests fonctionnels et validation des scénarios',
             'Participation à la mise en production',
             'Optimisation des processus de test, réduisant le temps de validation manuelle de 45%',
-            'Collaboration avec les parties prenantes pour affiner les besoins',
           ],
         },
         env: {
@@ -274,7 +273,7 @@ export const resumeConfig: ResumeConfig = {
   // ===== PDF =====
   pdf: {
     label: { en: 'Download PDF', fr: 'Télécharger le PDF' },
-    path: { en: '/cv/CV_Eileen_Jovenin_EN.pdf', fr: '/cv/CV_Eileen_Jovenin.pdf' },
+    path: { en: '/cv/resume_Eileen_Jovenin.pdf', fr: '/cv/CV_Eileen_Jovenin.pdf' },
   },
 
   // ===== THEME =====
