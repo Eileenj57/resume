@@ -5,7 +5,7 @@ export const resumeConfig: ResumeConfig = {
   personal: {
     name: 'Eileen Jovenin',
     photo: '/images/photo.jpg',
-    photoBackEmoji: '🤖',
+    photoBackEmoji: '👩🏻‍🦰',
     title: {
       en: 'Computer Science Engineer',
       fr: 'Ingénieur Informatique',
