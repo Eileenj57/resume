@@ -112,7 +112,7 @@ export const resumeConfig: ResumeConfig = {
     },
   ],
 
-  // ===== PROFESSIONAL EXPERIENCES =====
+  // ===== PROFESSIONAL EXPERIENCES ====
   experiences: [
     {
       id: 'uliege',
