@@ -1,7 +1,8 @@
-import { lazy, Suspense, useEffect } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { LanguageProvider } from '@/lib/i18n'
 import { ThemeProvider, useTheme } from '@/lib/theme'
 import { Resume } from '@/components/Resume'
+import { Portfolio } from '@/components/Portfolio'
 import { presets } from '@/data/presets'
 import type { PresetName } from '@/data/types'
 import { resumeConfig } from '@/data/resume-config'
@@ -73,12 +74,29 @@ function DevPresetSelector() {
 }
 
 export default function App() {
+  // Simple hash-based routing: #/portfolio → Portfolio, everything else → CV
+  const [page, setPage] = useState<'cv' | 'portfolio'>(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash
+      if (hash.includes('portfolio')) return 'portfolio'
+    }
+    return 'cv'
+  })
+
+  useEffect(() => {
+    const onHashChange = () => {
+      setPage(window.location.hash.includes('portfolio') ? 'portfolio' : 'cv')
+    }
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
   return (
     <ThemeProvider>
       <LanguageProvider>
         <SeoHead />
         <ThemeVarsInjector>
-          <Resume />
+          {page === 'portfolio' ? <Portfolio /> : <Resume />}
         </ThemeVarsInjector>
       </LanguageProvider>
       {import.meta.env.DEV && (
