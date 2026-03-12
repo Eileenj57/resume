@@ -28,30 +28,31 @@ function SidebarPhoto({ photo, name, emoji }: { photo: string; name: string; emo
 
   if (hasError) {
     return (
-      <div className="flex justify-center mb-6">
-        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center border-4 border-resume-bg/30 shadow-lg">
-          <span className="text-4xl">{emoji || '👨‍💻'}</span>
+      <div className="flex justify-center mb-7">
+        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center ring-4 ring-resume-primary/20 shadow-lg">
+          <span className="text-4xl">{emoji || '👩‍💻'}</span>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="flex justify-center mb-6" style={{ perspective: '300px' }}>
+    <div className="flex justify-center mb-7" style={{ perspective: '300px' }}>
       <motion.div
         onClick={handleFlip}
         onKeyDown={handleKeyDown}
         onAnimationComplete={() => setIsSpinning(false)}
         animate={{ rotateY: isSpinning ? 360 : 0 }}
         transition={{ duration: PHOTO_ANIMATION_DURATION, ease: 'easeInOut' }}
-        className="relative w-32 h-32 cursor-pointer"
+        className="relative w-28 h-28 cursor-pointer"
         style={{ transformStyle: 'preserve-3d' }}
         role="button"
         tabIndex={0}
         aria-label={`Photo of ${name} — click to flip`}
       >
+        {/* Front */}
         <div
-          className="absolute inset-0 rounded-full overflow-hidden border-4 border-resume-bg/30 shadow-lg"
+          className="absolute inset-0 rounded-full overflow-hidden ring-4 ring-resume-primary/20 shadow-lg"
           style={{ backfaceVisibility: 'hidden' }}
         >
           <img
@@ -62,11 +63,12 @@ function SidebarPhoto({ photo, name, emoji }: { photo: string; name: string; emo
             onError={() => setHasError(true)}
           />
         </div>
+        {/* Back */}
         <div
-          className="absolute inset-0 rounded-full border-4 border-resume-bg/30 shadow-lg bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center"
+          className="absolute inset-0 rounded-full ring-4 ring-resume-primary/20 shadow-lg bg-gradient-to-br from-resume-primary to-resume-primary-light flex items-center justify-center"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
-          <span className="text-4xl">{emoji || '👨‍💻'}</span>
+          <span className="text-4xl">{emoji || '👩‍💻'}</span>
         </div>
       </motion.div>
     </div>
@@ -111,25 +113,44 @@ export function Sidebar() {
                 </div>
               )}
               {category.type === 'text' && (
-                <p className="text-xs text-resume-text-secondary">
+                <p
+                  className="text-resume-text-secondary"
+                  style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', lineHeight: 1.6 }}
+                >
                   {category.items
                     .map((item) => (typeof item.name === 'string' ? item.name : resolve(item.name)))
                     .join(', ')}
                 </p>
               )}
               {category.type === 'languages' && (
-                <div className="flex items-center gap-3 text-sm flex-wrap">
+                <div className="space-y-1.5">
                   {category.items.map((item, j) => {
                     const name = typeof item.name === 'string' ? item.name : resolve(item.name)
                     return (
-                      <span key={`${name}-${j}`} className="flex items-center gap-1">
-                        <span className="text-resume-text-secondary">
-                          {name} {item.level ? resolve(item.level) : ''}
-                          {item.details && (
-                            <span className="text-xs opacity-70 ml-1">{item.details}</span>
-                          )}
+                      <div key={`${name}-${j}`} className="flex items-baseline gap-2">
+                        <span
+                          className="text-resume-text"
+                          style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.78rem', fontWeight: 500 }}
+                        >
+                          {name}
                         </span>
-                      </span>
+                        {item.level && (
+                          <span
+                            className="text-resume-primary"
+                            style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem' }}
+                          >
+                            {resolve(item.level)}
+                          </span>
+                        )}
+                        {item.details && (
+                          <span
+                            className="text-resume-text-secondary/60"
+                            style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.58rem' }}
+                          >
+                            {item.details}
+                          </span>
+                        )}
+                      </div>
                     )
                   })}
                 </div>
@@ -142,12 +163,21 @@ export function Sidebar() {
       {/* Hobbies */}
       {hobbies && hobbies.length > 0 && labels.sections.hobbies && (
         <SidebarSection title={resolve(labels.sections.hobbies)}>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2.5">
             {hobbies.map((hobby, i) => (
               <div key={`${resolve(hobby.title)}-${i}`}>
-                <p className="font-medium text-sm text-resume-text">{resolve(hobby.title)}</p>
+                <p
+                  className="text-resume-text"
+                  style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 500 }}
+                >
+                  {resolve(hobby.title)}
+                </p>
                 {hobby.details?.map((detail, j) => (
-                  <p key={j} className="text-xs text-resume-text-secondary">
+                  <p
+                    key={j}
+                    className="text-resume-text-secondary"
+                    style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem', marginTop: '1px' }}
+                  >
                     {resolve(detail)}
                   </p>
                 ))}

@@ -14,7 +14,14 @@ export function SidebarSection({ title, children, className }: SidebarSectionPro
     <section className={cn('mb-6', className)} aria-labelledby={titleId}>
       <h3
         id={titleId}
-        className="text-xs font-bold tracking-widest text-resume-text mb-3 pb-1 border-b border-resume-primary/20"
+        className="text-resume-text mb-3 pb-1 border-b border-resume-primary/20"
+        style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: '0.58rem',
+          fontWeight: 500,
+          letterSpacing: '0.14em',
+          textTransform: 'uppercase',
+        }}
       >
         {title}
       </h3>

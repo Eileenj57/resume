@@ -12,7 +12,7 @@ export function ThemeToggle({ label }: ThemeToggleProps) {
   return (
     <button
       onClick={toggle}
-      className="p-2 rounded-full hover:bg-resume-primary/10 transition-colors"
+      className="p-1.5 rounded-lg border border-resume-primary/25 hover:bg-resume-primary/10 hover:border-resume-primary/50 transition-all"
       aria-label={label || 'Toggle dark mode'}
     >
       <motion.div
@@ -23,9 +23,9 @@ export function ThemeToggle({ label }: ThemeToggleProps) {
         transition={{ duration: 0.2 }}
       >
         {isDark ? (
-          <SunIcon className="w-5 h-5 text-resume-primary" />
+          <SunIcon className="w-4 h-4 text-resume-primary" />
         ) : (
-          <MoonIcon className="w-5 h-5 text-resume-primary" />
+          <MoonIcon className="w-4 h-4 text-resume-primary" />
         )}
       </motion.div>
     </button>

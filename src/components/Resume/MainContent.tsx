@@ -5,6 +5,15 @@ import { ExperienceItem } from './ExperienceItem'
 import { ProjectItem } from './ProjectItem'
 import { EducationItem } from './EducationItem'
 
+// Shared heading style matching portfolio section titles
+const sectionHeadingStyle: React.CSSProperties = {
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '0.62rem',
+  fontWeight: 500,
+  letterSpacing: '0.14em',
+  textTransform: 'uppercase',
+}
+
 export function MainContent() {
   const { resolve, resolveArray } = useTranslation()
   const { personal, experiences, projects, education, labels } = resumeConfig
@@ -24,22 +33,45 @@ export function MainContent() {
 
   return (
     <div className="md:w-[62%] p-8">
-      {/* Header */}
+      {/* Header — Lora serif name, mono subtitle */}
       <div className="text-center mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-[0.15em] text-resume-text">
-          {personal.name.toUpperCase()}
+        <h1
+          className="text-resume-text"
+          style={{
+            fontFamily: "'Lora', Georgia, serif",
+            fontSize: 'clamp(1.6rem, 4vw, 2.1rem)',
+            fontWeight: 500,
+            letterSpacing: '-0.01em',
+            lineHeight: 1.2,
+          }}
+        >
+          {personal.name.split(' ')[0]}{' '}
+          <em style={{ fontStyle: 'italic', color: 'var(--resume-primary)' }}>
+            {personal.name.split(' ').slice(1).join(' ')}
+          </em>
         </h1>
-        <p className="text-base text-resume-text-secondary tracking-widest mt-2">
-          {resolve(personal.title).toUpperCase()}
+        <p
+          className="text-resume-text-secondary mt-2"
+          style={sectionHeadingStyle}
+        >
+          {resolve(personal.title)}
         </p>
         {personal.subtitle && (
-          <p className="text-sm text-resume-primary mt-1">{resolve(personal.subtitle)}</p>
+          <p
+            className="text-resume-primary mt-1"
+            style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.06em' }}
+          >
+            {resolve(personal.subtitle)}
+          </p>
         )}
       </div>
 
       {/* Experiences */}
       <div className="relative">
-        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-6 pb-2 border-b border-resume-primary/20">
+        <h2
+          className="text-resume-text mb-6 pb-2 border-b border-resume-primary/20"
+          style={sectionHeadingStyle}
+        >
           {resolve(labels.sections.experience)}
         </h2>
         <div className="space-y-2">
@@ -82,7 +114,10 @@ export function MainContent() {
       {/* Projects */}
       {projects && projects.length > 0 && labels.sections.projects && (
         <div className="mt-8">
-          <h2 className="text-sm font-bold tracking-widest text-resume-text mb-4 pb-2 border-b border-resume-primary/20">
+          <h2
+            className="text-resume-text mb-4 pb-2 border-b border-resume-primary/20"
+            style={sectionHeadingStyle}
+          >
             {resolve(labels.sections.projects)}
           </h2>
           <div className="space-y-1">
@@ -102,7 +137,10 @@ export function MainContent() {
 
       {/* Education */}
       <div className="mt-8">
-        <h2 className="text-sm font-bold tracking-widest text-resume-text mb-4 pb-2 border-b border-resume-primary/20">
+        <h2
+          className="text-resume-text mb-4 pb-2 border-b border-resume-primary/20"
+          style={sectionHeadingStyle}
+        >
           {resolve(labels.sections.education)}
         </h2>
         <div className="space-y-4">

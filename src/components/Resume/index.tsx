@@ -12,8 +12,8 @@ export function Resume() {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-8">
-      {/* Top bar: theme toggle + language + pdf */}
-      <div className="flex items-center justify-between mb-4">
+      {/* Top bar */}
+      <div className="flex items-center justify-between mb-5">
         <PdfDownload />
         <div className="flex items-center gap-2">
           <LanguageToggle />
@@ -23,9 +23,10 @@ export function Resume() {
 
       {/* Resume card */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-resume-bg-card rounded-lg shadow-2xl overflow-hidden dark:border dark:border-resume-primary/10"
+        transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+        className="bg-resume-bg-card rounded-2xl shadow-xl overflow-hidden border border-resume-primary/10"
       >
         <div className="flex flex-col-reverse md:flex-row">
           <Sidebar />
@@ -34,7 +35,10 @@ export function Resume() {
       </motion.div>
 
       {/* Hint */}
-      <p className="text-center text-sm text-resume-text-secondary mt-6">
+      <p
+        className="text-center text-resume-text-secondary mt-5"
+        style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.08em' }}
+      >
         {resolve(resumeConfig.labels.actions.clickHint)}
       </p>
     </div>

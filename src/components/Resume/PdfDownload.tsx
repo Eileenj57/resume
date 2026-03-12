@@ -3,6 +3,13 @@ import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 import { assetUrl } from '@/lib/utils'
 
+const monoStyle: React.CSSProperties = {
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '0.68rem',
+  fontWeight: 500,
+  letterSpacing: '0.04em',
+}
+
 export function PdfDownload() {
   const { language, resolve } = useTranslation()
 
@@ -10,8 +17,6 @@ export function PdfDownload() {
 
   const { path, label } = resumeConfig.pdf
 
-  // Resolve path: string = same PDF for all languages, LocalizedString = per-language PDF
-  // Hides the button if no PDF exists for the current language
   const resolvedPath = typeof path === 'string'
     ? path
     : path[language] ?? null
@@ -28,9 +33,10 @@ export function PdfDownload() {
     <a
       href={assetUrl(resolvedPath)}
       download={resolvedPath.split('/').pop() ?? 'resume.pdf'}
-      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-resume-primary/10 text-resume-primary hover:bg-resume-primary/20 transition-colors text-sm font-medium"
+      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-resume-primary/25 text-resume-primary hover:bg-resume-primary/10 hover:border-resume-primary/50 transition-all"
+      style={monoStyle}
     >
-      <DownloadIcon className="w-4 h-4" />
+      <DownloadIcon className="w-3.5 h-3.5" />
       {downloadLabel}
     </a>
   )

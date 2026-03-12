@@ -4,6 +4,13 @@ import { ChevronDownIcon } from '@/components/icons'
 import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 
+const monoStyle: React.CSSProperties = {
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '0.68rem',
+  fontWeight: 500,
+  letterSpacing: '0.05em',
+}
+
 export function LanguageToggle() {
   const { language, setLanguage } = useTranslation()
   const { available, labels } = resumeConfig.languages
@@ -12,9 +19,7 @@ export function LanguageToggle() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setIsOpen(false)
-      }
+      if (ref.current && !ref.current.contains(e.target as Node)) setIsOpen(false)
     }
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
@@ -31,7 +36,8 @@ export function LanguageToggle() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold tracking-wide bg-resume-primary/10 text-resume-primary hover:bg-resume-primary/20 transition-colors cursor-pointer"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-resume-primary/25 text-resume-primary hover:bg-resume-primary/10 hover:border-resume-primary/50 transition-all cursor-pointer"
+        style={monoStyle}
         aria-label="Select language"
         aria-expanded={isOpen}
       >
@@ -44,11 +50,11 @@ export function LanguageToggle() {
       <AnimatePresence>
         {isOpen && (
           <motion.ul
-            initial={{ opacity: 0, y: -4 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-1 min-w-[4rem] rounded-lg bg-resume-bg-card border border-resume-primary/15 shadow-lg overflow-hidden z-50"
+            initial={{ opacity: 0, y: -4, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -4, scale: 0.97 }}
+            transition={{ duration: 0.12 }}
+            className="absolute right-0 mt-1 min-w-[4rem] rounded-lg bg-resume-bg-card border border-resume-primary/20 shadow-lg overflow-hidden z-50"
             role="listbox"
             aria-label="Language"
           >
@@ -58,11 +64,12 @@ export function LanguageToggle() {
                   onClick={() => handleSelect(lang)}
                   role="option"
                   aria-selected={lang === language}
-                  className={`w-full px-3 py-2 text-xs font-semibold tracking-wide text-left transition-colors cursor-pointer ${
+                  className={`w-full px-3 py-2 text-left transition-colors cursor-pointer ${
                     lang === language
                       ? 'bg-resume-primary/15 text-resume-primary'
                       : 'text-resume-text-secondary hover:bg-resume-primary/5 hover:text-resume-primary'
                   }`}
+                  style={monoStyle}
                 >
                   {labels[lang]}
                 </button>
