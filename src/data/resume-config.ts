@@ -296,7 +296,7 @@ export const resumeConfig: ResumeConfig = {
       skills: { en: 'SKILLS', fr: 'COMPÉTENCES' },
       experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCE PROFESSIONNELLE' },
       education: { en: 'EDUCATION', fr: 'FORMATION' },
-      projects: { en: 'PROJECTS', fr: 'PROJETS' },
+      projects: { en: 'KEY ACADEMIC PROJECTS', fr: 'PROJETS ACADÉMIQUES NOTABLES' },
       hobbies: { en: 'INTERESTS', fr: 'CENTRES D\'INTÉRÊT' },
     },
     experience: {
