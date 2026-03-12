@@ -186,7 +186,7 @@ const PROJECTS: Project[] = [
     titleEn: 'Unity Mini-games — Apple Catcher, Brick Breaker, Furapi Bird',
     descFr: "Trois mini-jeux développés sous Unity. Première prise en main de Unity et C#, avec un focus sur la mécanique de jeu, les animations et l'architecture orientée objet.",
     descEn: "Three mini-games built in Unity. First hands-on with Unity and C#, focusing on game mechanics, animations, and object-oriented architecture.",
-    meta: 'Solo',
+    meta: 'Groupe',
     tags: ['Unity', 'C#'],
     category: ['game'],
     href: 'https://github.com/Eileenj57/LP2B-Unity-Game'
@@ -200,7 +200,7 @@ const PROJECTS: Project[] = [
     titleEn: 'Tetris — Java Swing',
     descFr: "Recréation complète du Tetris classique en Java avec Swing. Gestion du score, des niveaux et des animations. Support multilingue via fichiers de propriétés, intégration musicale.",
     descEn: 'Full recreation of classic Tetris in Java with Swing. Score, levels, animations, multilingual support via properties files, music integration.',
-    meta: 'Solo',
+    meta: 'Groupe',
     tags: ['Java', 'Swing'],
     category: ['game'],
     href: 'https://github.com/Eileenj57/LP2A-Tetris'
@@ -246,6 +246,19 @@ const PROJECTS: Project[] = [
     tags: ['Python', 'Algorithmes génétiques', 'Optimisation'],
     category: ['ai'],
     href: 'https://github.com/Eileenj57/RN40-Project'
+  },
+  {
+    id: 'p12',
+    icon: '🤖',
+    badge: 'side',
+    badgeKey: 'b_side',
+    titleFr: 'Bot Telegram — Recherche & envoi de fichiers',
+    titleEn: 'Telegram Bot — File Search & Delivery',
+    descFr: "Bot Telegram privé avec système de recherche multi-sources, envoi de fichiers via différents canaux, et gestion des utilisateurs par liste blanche. Intégration Gmail OAuth, MongoDB et VirusTotal.",
+    descEn: "Private Telegram bot with multi-source search, file delivery via multiple channels, and user access control via whitelist. Integrates Gmail OAuth, MongoDB and VirusTotal.",
+    meta: 'Solo · Personnel',
+    tags: ['Python', 'Telegram API', 'Gmail API', 'MongoDB', 'VirusTotal'],
+    category: ['side'],
   }
 ]
 
@@ -465,7 +478,9 @@ export function Portfolio() {
             </div>
             <div className="flex gap-5">
               {[
+                { num: '5', lbl: lang === 'fr' ? 'ans' : 'years' },
                 { num: '10+', lbl: lang === 'fr' ? 'projets' : 'projects' },
+                { num: '4', lbl: lang === 'fr' ? 'langues' : 'languages' },
               ].map(s => (
                 <div key={s.lbl} className="flex flex-col items-center gap-0.5">
                   <span className="text-2xl text-resume-text font-light tracking-tight" style={{ fontFamily: "'Lora', serif" }}>{s.num}</span>
