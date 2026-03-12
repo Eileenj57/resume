@@ -465,9 +465,7 @@ export function Portfolio() {
             </div>
             <div className="flex gap-5">
               {[
-                { num: '5', lbl: lang === 'fr' ? 'ans' : 'years' },
                 { num: '10+', lbl: lang === 'fr' ? 'projets' : 'projects' },
-                { num: '4', lbl: lang === 'fr' ? 'langues' : 'languages' },
               ].map(s => (
                 <div key={s.lbl} className="flex flex-col items-center gap-0.5">
                   <span className="text-2xl text-resume-text font-light tracking-tight" style={{ fontFamily: "'Lora', serif" }}>{s.num}</span>
