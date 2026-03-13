@@ -160,9 +160,15 @@ export function MainContent() {
 
       {/* Recommendation */}
       <div className="mt-8">
-        <h2 className="text-resume-text mb-4 pb-2 border-b border-resume-primary/20" style={sectionHeadingStyle}>
-          {resolve({ en: 'RECOMMENDATION (FROM THE LAST INTERNSHIP)', fr: 'RECOMMANDATION (ISSU DU DERNIER STAGE)' })}
+        <h2 className="text-resume-text mb-1 pb-2 border-b border-resume-primary/20" style={sectionHeadingStyle}>
+          {resolve({ en: 'RECOMMENDATION', fr: 'RECOMMANDATION' })}
         </h2>
+        <p
+          className="text-resume-text-secondary mb-3"
+          style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.04em' }}
+        >
+          {resolve({ en: 'From my end-of-studies internship · PSILab, University of Liège', fr: 'Issue de mon stage de fin d\'études · PSILab, Université de Liège' })}
+        </p>
         <div className="relative rounded-xl border border-resume-primary/20 bg-resume-primary/5 px-5 py-4">
           {/* Decorative quote mark */}
           <span
@@ -172,17 +178,15 @@ export function MainContent() {
           >
             "
           </span>
-
           <blockquote
             className="text-resume-text-secondary leading-relaxed"
-            style={{ fontFamily: "'Lora', Georgia, serif", fontSize: '0.82rem', fontStyle: 'italic', textAlign: 'justify'}}
+            style={{ fontFamily: "'Lora', Georgia, serif", fontSize: '0.82rem', fontStyle: 'italic', textAlign: 'justify' }}
           >
             {resolve({
-              en: "Eileen successfully bridged two complex and very distinct fields: reinforcement learning (aligned with her training) and high-contrast imaging in astronomy (new to her). Despite this significant challenge, she contributed meaningfully to this research topic, integrated smoothly into our team, and demonstrated autonomy, commitment, and strong communication skills in both French and English.",
-              fr: "Eileen a su connecter deux domaines complexes et très distincts : l'apprentissage par renforcement (en lien avec sa formation) et l'imagerie à haut contraste en astronomie (nouveau pour elle). Malgré ce défi important, elle a contribué de manière significative à ce sujet de recherche, s'est intégrée naturellement à notre équipe, et a fait preuve d'autonomie, d'engagement et de solides compétences en communication en français et en anglais.",
+              en: <>Eileen successfully <strong>bridged two complex and very distinct fields</strong>: <strong>reinforcement learning</strong> (aligned with her training) and <strong>high-contrast imaging in astronomy</strong> (new to her). Despite this significant challenge, she <strong>contributed meaningfully</strong> to this research topic, integrated smoothly into our team, and demonstrated <strong>autonomy, commitment, and strong communication skills</strong> in both French and English.</>,
+              fr: <>Eileen a su <strong>connecter deux domaines complexes et très distincts</strong> : <strong>l'apprentissage par renforcement</strong> (en lien avec sa formation) et <strong>l'imagerie à haut contraste en astronomie</strong> (nouveau pour elle). Malgré ce défi important, elle a <strong>contribué de manière significative</strong> à ce sujet de recherche, s'est intégrée naturellement à notre équipe, et a fait preuve d'<strong>autonomie, d'engagement et de solides compétences en communication</strong> en français et en anglais.</>,
             })}
           </blockquote>
-
           {/* Signature + download button */}
           <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
             <p
@@ -194,7 +198,7 @@ export function MainContent() {
                 fr: 'Gilles Orban de Xivry — Chercheur en Astronomie, Univ. de Liège · 2025',
               })}
             </p>
-            <a
+            
               href="LoR(GOX)_for_Eileen_Jovenin_2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
