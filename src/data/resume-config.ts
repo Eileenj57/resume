@@ -201,15 +201,6 @@ export const resumeConfig: ResumeConfig = {
   // ===== CERTIFICATIONS =====
   projects: [
     {
-      id: 'nvidia-dl',
-      title: { en: 'Getting Started with Deep Learning', fr: 'Getting Started with Deep Learning' },
-      description: {
-        en: 'Certificate of Competency — NVIDIA · Dec. 2022',
-        fr: 'Certificate of Competency — NVIDIA · Déc. 2022',
-      },
-      techs: ['Python', 'Deep Learning'],
-    },
-    {
       id: 'nvidia-cuda',
       title: { en: 'Fundamentals of Accelerated Computing with CUDA Python', fr: 'Fundamentals of Accelerated Computing with CUDA Python' },
       description: {
@@ -217,6 +208,15 @@ export const resumeConfig: ResumeConfig = {
         fr: 'Certificate of Competency — NVIDIA · Nov. 2022',
       },
       techs: ['Python', 'CUDA'],
+    },
+    {
+      id: 'nvidia-dl',
+      title: { en: 'Getting Started with Deep Learning', fr: 'Getting Started with Deep Learning' },
+      description: {
+        en: 'Certificate of Competency — NVIDIA · Dec. 2022',
+        fr: 'Certificate of Competency — NVIDIA · Déc. 2022',
+      },
+      techs: ['Python', 'Deep Learning'],
     },
     {
       id: 'columbia-ai',
