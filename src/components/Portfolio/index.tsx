@@ -259,7 +259,21 @@ const PROJECTS: Project[] = [
     meta: 'Solo · Personnel',
     tags: ['Python', 'Telegram API', 'Gmail API', 'MongoDB', 'VirusTotal'],
     category: ['side'],
-  }
+  },
+  {
+  id: 'p13',
+  icon: '👁️',
+  badge: 'side',
+  badgeKey: 'b_side',
+  titleFr: 'Computer Vision Classifier — PyTorch',
+  titleEn: 'Computer Vision Classifier — PyTorch',
+  descFr: "Classification d'images sur FashionMNIST avec PyTorch. Implémentation et comparaison de modèles : baseline linéaire, CNN custom et TinyVGG. Suivi des métriques d'entraînement et visualisation des résultats.",
+  descEn: 'Image classification on FashionMNIST with PyTorch. Implementation and comparison of models: linear baseline, custom CNN and TinyVGG. Training metrics tracking and results visualization.',
+  meta: 'Solo · Personnel',
+  tags: ['Python', 'PyTorch', 'CNN', 'Computer Vision', 'Deep Learning'],
+  category: ['ai', 'side'],
+  href: 'https://www.learnpytorch.io/03_pytorch_computer_vision/'
+},
 ]
 
 const FILTERS: { key: Filter; labelFr: string; labelEn: string }[] = [
