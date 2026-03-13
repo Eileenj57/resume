@@ -253,7 +253,7 @@ export const resumeConfig: ResumeConfig = {
         fr: 'Baccalauréat scientifique, spécialité mathématiques' 
       },
       specialty: { 
-        en: 'Honors: Très Bien', 
+        en: 'Highest Honors', 
         fr: 'Mention Très Bien' 
       },
       period: '2020',
