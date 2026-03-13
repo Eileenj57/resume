@@ -161,7 +161,7 @@ export function MainContent() {
       {/* Recommendation */}
       <div className="mt-8">
         <h2 className="text-resume-text mb-4 pb-2 border-b border-resume-primary/20" style={sectionHeadingStyle}>
-          {resolve({ en: 'RECOMMENDATION', fr: 'RECOMMANDATION' })}
+          {resolve({ en: 'RECOMMENDATION (FROM THE LAST INTERNSHIP)', fr: 'RECOMMANDATION (ISSU DU DERNIER STAGE)' })}
         </h2>
         <div className="relative rounded-xl border border-resume-primary/20 bg-resume-primary/5 px-5 py-4">
           {/* Decorative quote mark */}
