@@ -195,7 +195,7 @@ export function MainContent() {
               })}
             </p>
             <a
-              href="public/LoR(GOX)_for_Eileen_Jovenin_2025.pdf"
+              href="LoR(GOX)_for_Eileen_Jovenin_2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 flex items-center gap-1.5 px-3 py-1 rounded-lg border border-resume-primary/30 text-resume-primary hover:bg-resume-primary/10 transition-colors"
