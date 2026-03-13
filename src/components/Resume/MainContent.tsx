@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useTranslation } from '@/lib/i18n'
 import { resumeConfig } from '@/data/resume-config'
 import { ExperienceItem } from './ExperienceItem'
-import { ProjectItem } from './ProjectItem'
 import { EducationItem } from './EducationItem'
 
 // Shared heading style matching portfolio section titles
@@ -111,7 +110,7 @@ export function MainContent() {
         </div>
       </div>
 
-      {/* Projects */}
+      {/* Certifications */}
       {projects && projects.length > 0 && labels.sections.projects && (
         <div className="mt-8">
           <h2
@@ -120,16 +119,33 @@ export function MainContent() {
           >
             {resolve(labels.sections.projects)}
           </h2>
-          <div className="space-y-1">
+          <div className="space-y-2">
             {projects.map((project) => (
-              <ProjectItem
+              <div
                 key={project.id}
-                title={resolve(project.title)}
-                description={resolve(project.description)}
-                techs={project.techs}
-                url={project.url}
-                github={project.github}
-              />
+                className="flex items-start gap-3 py-1.5"
+              >
+                <span
+                  className="mt-0.5 text-resume-primary shrink-0"
+                  style={{ fontSize: '0.7rem', lineHeight: '1.6' }}
+                >
+                  ✦
+                </span>
+                <div className="min-w-0">
+                  <p
+                    className="text-resume-text leading-snug"
+                    style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 500 }}
+                  >
+                    {resolve(project.title)}
+                  </p>
+                  <p
+                    className="text-resume-text-secondary mt-0.5"
+                    style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem' }}
+                  >
+                    {resolve(project.description)}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -154,6 +170,48 @@ export function MainContent() {
               logo={edu.logo}
             />
           ))}
+        </div>
+      </div>
+
+      {/* Recommendation */}
+      <div className="mt-8">
+        <h2
+          className="text-resume-text mb-4 pb-2 border-b border-resume-primary/20"
+          style={sectionHeadingStyle}
+        >
+          {resolve({ en: 'RECOMMENDATION', fr: 'RECOMMANDATION' })}
+        </h2>
+        <div
+          className="relative rounded-xl border border-resume-primary/20 bg-resume-primary/5 px-5 py-4"
+        >
+          {/* Decorative quote mark */}
+          <span
+            className="absolute -top-3 left-4 text-resume-primary/30 select-none"
+            style={{ fontFamily: "'Lora', serif", fontSize: '3rem', lineHeight: 1 }}
+            aria-hidden="true"
+          >
+            "
+          </span>
+          <blockquote
+            className="text-resume-text-secondary leading-relaxed"
+            style={{ fontFamily: "'Lora', Georgia, serif", fontSize: '0.82rem', fontStyle: 'italic' }}
+          >
+            {resolve({
+              en: 'Eileen successfully bridged two complex and very distinct fields: reinforcement learning (aligned with her training) and high-contrast imaging in astronomy (new to her). Despite this significant challenge, she contributed meaningfully to this research topic, integrated smoothly into our team, and demonstrated autonomy, commitment, and strong communication skills in both French and English.',
+              fr: 'Eileen a su connecter deux domaines complexes et très distincts : l\'apprentissage par renforcement (en lien avec sa formation) et l\'imagerie à haut contraste en astronomie (nouveau pour elle). Malgré ce défi important, elle a contribué de manière significative à ce sujet de recherche, s\'est intégrée naturellement à notre équipe, et a fait preuve d\'autonomie, d\'engagement et de solides compétences en communication en français et en anglais.',
+            })}
+          </blockquote>
+          <div className="mt-3 flex items-center gap-2">
+            <div
+              className="h-px flex-1 bg-resume-primary/20"
+            />
+            <p
+              className="text-resume-primary shrink-0"
+              style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.06em' }}
+            >
+              Gilles Orban de Xivry — Research Staff in Astronomy, University of Liège · 2025
+            </p>
+          </div>
         </div>
       </div>
     </div>
