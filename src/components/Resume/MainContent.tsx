@@ -14,7 +14,7 @@ const sectionHeadingStyle: React.CSSProperties = {
 }
 
 export function MainContent() {
-  const { resolve, resolveArray } = useTranslation()
+  const { resolve, resolveArray, language } = useTranslation()
   const { personal, experiences, projects, education, labels } = resumeConfig
   const [expandedExp, setExpandedExp] = useState<string | null>(null)
 
@@ -29,6 +29,10 @@ export function MainContent() {
     techEnv: resolve(labels.experience.techEnv),
     technologies: resolve(labels.experience.technologies),
   }
+
+  const recommendationQuote = language === 'fr'
+    ? <>Eileen a su <strong>connecter deux domaines complexes et très distincts</strong> : <strong>l'apprentissage par renforcement</strong> (en lien avec sa formation) et <strong>l'imagerie à haut contraste en astronomie</strong> (nouveau pour elle). Malgré ce défi important, elle a <strong>contribué de manière significative</strong> à ce sujet de recherche, s'est intégrée naturellement à notre équipe, et a fait preuve d'<strong>autonomie, d'engagement et de solides compétences en communication</strong> en français et en anglais.</>
+    : <>Eileen successfully <strong>bridged two complex and very distinct fields</strong>: <strong>reinforcement learning</strong> (aligned with her training) and <strong>high-contrast imaging in astronomy</strong> (new to her). Despite this significant challenge, she <strong>contributed meaningfully</strong> to this research topic, integrated smoothly into our team, and demonstrated <strong>autonomy, commitment, and strong communication skills</strong> in both French and English.</>
 
   return (
     <div className="md:w-[62%] p-8">
@@ -167,7 +171,7 @@ export function MainContent() {
           className="text-resume-text-secondary mb-3"
           style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem', letterSpacing: '0.04em' }}
         >
-          {resolve({ en: 'From my end-of-studies internship · PSILab, University of Liège', fr: 'Issue de mon stage de fin d\'études · PSILab, Université de Liège' })}
+          {resolve({ en: "From my end-of-studies internship · PSILab, University of Liège", fr: "Issue de mon stage de fin d'études · PSILab, Université de Liège" })}
         </p>
         <div className="relative rounded-xl border border-resume-primary/20 bg-resume-primary/5 px-5 py-4">
           {/* Decorative quote mark */}
@@ -182,10 +186,7 @@ export function MainContent() {
             className="text-resume-text-secondary leading-relaxed"
             style={{ fontFamily: "'Lora', Georgia, serif", fontSize: '0.82rem', fontStyle: 'italic', textAlign: 'justify' }}
           >
-            {resolve({
-              en: <>Eileen successfully <strong>bridged two complex and very distinct fields</strong>: <strong>reinforcement learning</strong> (aligned with her training) and <strong>high-contrast imaging in astronomy</strong> (new to her). Despite this significant challenge, she <strong>contributed meaningfully</strong> to this research topic, integrated smoothly into our team, and demonstrated <strong>autonomy, commitment, and strong communication skills</strong> in both French and English.</>,
-              fr: <>Eileen a su <strong>connecter deux domaines complexes et très distincts</strong> : <strong>l'apprentissage par renforcement</strong> (en lien avec sa formation) et <strong>l'imagerie à haut contraste en astronomie</strong> (nouveau pour elle). Malgré ce défi important, elle a <strong>contribué de manière significative</strong> à ce sujet de recherche, s'est intégrée naturellement à notre équipe, et a fait preuve d'<strong>autonomie, d'engagement et de solides compétences en communication</strong> en français et en anglais.</>,
-            })}
+            {recommendationQuote}
           </blockquote>
           {/* Signature + download button */}
           <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
@@ -198,8 +199,8 @@ export function MainContent() {
                 fr: 'Gilles Orban de Xivry — Chercheur en Astronomie, Univ. de Liège · 2025',
               })}
             </p>
-            
-              href="LoR(GOX)_for_Eileen_Jovenin_2025.pdf"
+            <a
+              href={`${import.meta.env.BASE_URL}LoR(GOX)_for_Eileen_Jovenin_2025.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 flex items-center gap-1.5 px-3 py-1 rounded-lg border border-resume-primary/30 text-resume-primary hover:bg-resume-primary/10 transition-colors"
