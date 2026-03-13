@@ -175,7 +175,7 @@ export function MainContent() {
 
           <blockquote
             className="text-resume-text-secondary leading-relaxed"
-            style={{ fontFamily: "'Lora', Georgia, serif", fontSize: '0.82rem', fontStyle: 'italic' }}
+            style={{ fontFamily: "'Lora', Georgia, serif", fontSize: '0.82rem', fontStyle: 'italic', textAlign: 'justify'}}
           >
             {resolve({
               en: "Eileen successfully bridged two complex and very distinct fields: reinforcement learning (aligned with her training) and high-contrast imaging in astronomy (new to her). Despite this significant challenge, she contributed meaningfully to this research topic, integrated smoothly into our team, and demonstrated autonomy, commitment, and strong communication skills in both French and English.",
@@ -195,7 +195,7 @@ export function MainContent() {
               })}
             </p>
             <a
-              href="/LoR (GOX)_for_Eileen_Jovenin_2025.pdf"
+              href="resume/public/LoR(GOX)_for_Eileen_Jovenin_2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 flex items-center gap-1.5 px-3 py-1 rounded-lg border border-resume-primary/30 text-resume-primary hover:bg-resume-primary/10 transition-colors"
