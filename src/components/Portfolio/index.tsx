@@ -92,7 +92,7 @@ const PROJECTS: Project[] = [
     meta: 'Sept. 2023 – Fév. 2024',
     location: 'Rouffach, France',
     tags: ['C#', 'CSHTML', 'HTML/CSS', 'Git'],
-    category: ['work'],
+    category: ['work', 'web'],
     expandable: true,
     details: {
       fr: {
