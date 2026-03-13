@@ -198,25 +198,34 @@ export const resumeConfig: ResumeConfig = {
     },
   ],
 
-  // ===== PROJECTS =====
+  // ===== CERTIFICATIONS =====
   projects: [
     {
-      id: 'multi-agent',
-      title: { en: 'Multi-Agent Patrolling System', fr: 'Système multi-agents de patrouille' },
+      id: 'nvidia-dl',
+      title: { en: 'Getting Started with Deep Learning', fr: 'Getting Started with Deep Learning' },
       description: {
-        en: 'Multi-agent system optimized using Ant Colony Optimization and K-means clustering algorithms.',
-        fr: 'Système multi-agents optimisé par Ant Colony Optimization et K-means.',
+        en: 'Certificate of Competency — NVIDIA · Dec. 2022',
+        fr: 'Certificate of Competency — NVIDIA · Déc. 2022',
       },
-      techs: ['Python', 'Machine Learning'],
+      techs: ['Python', 'Deep Learning'],
     },
     {
-      id: 'life-vair',
-      title: { en: 'LIFE V-AIR Project', fr: 'Projet LIFE V-AIR' },
+      id: 'nvidia-cuda',
+      title: { en: 'Fundamentals of Accelerated Computing with CUDA Python', fr: 'Fundamentals of Accelerated Computing with CUDA Python' },
       description: {
-        en: 'Serious game in augmented and virtual reality for environmental awareness.',
-        fr: 'Serious game en réalité augmentée et virtuelle pour la sensibilisation environnementale.',
+        en: 'Certificate of Competency — NVIDIA · Nov. 2022',
+        fr: 'Certificate of Competency — NVIDIA · Nov. 2022',
       },
-      techs: ['Unity', 'C#'],
+      techs: ['Python', 'CUDA'],
+    },
+    {
+      id: 'columbia-ai',
+      title: { en: 'Learning AI Through Visualization', fr: 'Learning AI Through Visualization' },
+      description: {
+        en: 'Online course — Columbia+ · June 2025',
+        fr: 'Cours en ligne — Columbia+ · Juin 2025',
+      },
+      techs: ['AI'],
     },
   ],
 
@@ -296,7 +305,7 @@ export const resumeConfig: ResumeConfig = {
       skills: { en: 'SKILLS', fr: 'COMPÉTENCES' },
       experience: { en: 'PROFESSIONAL EXPERIENCE', fr: 'EXPÉRIENCE PROFESSIONNELLE' },
       education: { en: 'EDUCATION', fr: 'FORMATION' },
-      projects: { en: 'KEY ACADEMIC PROJECTS', fr: 'PROJETS ACADÉMIQUES NOTABLES' },
+      projects: { en: 'CERTIFICATIONS', fr: 'CERTIFICATIONS' },
       hobbies: { en: 'INTERESTS', fr: 'CENTRES D\'INTÉRÊT' },
     },
     experience: {
